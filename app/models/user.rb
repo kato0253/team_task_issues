@@ -23,6 +23,14 @@ class User < ApplicationRecord
     user
   end
 
+  def owner?(team)
+    self.id == team.owner_id
+  end
+
+  def self?(assign)
+    self.id == assign.user_id
+  end
+
   def self.generate_password
     SecureRandom.hex(10)
   end
