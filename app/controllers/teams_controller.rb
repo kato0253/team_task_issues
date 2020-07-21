@@ -76,7 +76,7 @@ class TeamsController < ApplicationController
 
   def if_not_leader
     unless current_user.owner?(@team)
-      flash[:notice] = I18n.t('views.messages.no_authority')
+      flash[:notice] = ('オーナー以外権限がありません')
       redirect_to team_path
     end
   end
